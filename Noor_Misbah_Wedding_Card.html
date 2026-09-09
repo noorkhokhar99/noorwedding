@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Noor &amp; Misbah — Wedding Invitation</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Cinzel:wght@400;600&family=Marcellus&family=Amiri:wght@400;700&family=Noto+Nastaliq+Urdu:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#1b1015;
+    --cream-deep:#130b0f;
+    --page:#0c0709;
+    --gold:#d9b46a;
+    --gold-soft:#b8934c;
+    --gold-pale:#8a6a34;
+    --ink:#f2e9d8;
+    --ink-soft:#c9b6a4;
+    --crimson:#e4485c;
+    --rose:#d95a6e;
+    --blush:#8f2438;
+    --leaf:#5d8763;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{
+    background:var(--page);
+    background-image:radial-gradient(ellipse 90% 60% at 50% 38%, #29141c 0%, var(--page) 70%);
+    min-height:100vh;
+    display:flex;justify-content:center;align-items:flex-start;
+    padding:28px 14px;
+    font-family:'Cormorant Garamond',serif;
+    color:var(--ink);
+  }
+  .card{
+    position:relative;
+    width:100%;max-width:460px;
+    background:
+      radial-gradient(ellipse 120% 55% at 50% 30%, #38182294 0%, var(--cream) 55%, var(--cream-deep) 100%),
+      linear-gradient(180deg,#1e1116,#140b10);
+    border:1px solid var(--gold-soft);
+    outline:3px double var(--gold);
+    outline-offset:6px;
+    padding:56px 30px 44px;
+    text-align:center;
+    box-shadow:0 26px 64px rgba(0,0,0,.6), 0 0 46px rgba(160,40,60,.18) inset;
+    overflow:hidden;
+  }
+  /* ---------- corner flourishes ---------- */
+  .corner{position:absolute;width:118px;height:118px;opacity:.95;pointer-events:none}
+  .corner.tl{top:6px;left:6px}
+  .corner.tr{top:6px;right:6px;transform:scaleX(-1)}
+  .corner.bl{bottom:6px;left:6px;transform:scaleY(-1)}
+  .corner.br{bottom:6px;right:6px;transform:scale(-1,-1)}
+  /* ---------- floating sparkles ---------- */
+  .spark{position:absolute;color:var(--gold-soft);font-size:11px;opacity:0;
+    animation:float 7s ease-in-out infinite;pointer-events:none}
+  @keyframes float{
+    0%{transform:translateY(14px) scale(.6);opacity:0}
+    25%{opacity:.85}
+    55%{opacity:.5}
+    100%{transform:translateY(-46px) scale(1);opacity:0}
+  }
+  /* ---------- entrance cascade ---------- */
+  .rise{opacity:0;transform:translateY(14px);animation:rise .9s ease forwards}
+  @keyframes rise{to{opacity:1;transform:none}}
+  .d1{animation-delay:.15s}.d2{animation-delay:.4s}.d3{animation-delay:.65s}
+  .d4{animation-delay:.9s}.d5{animation-delay:1.15s}.d6{animation-delay:1.4s}
+  .d7{animation-delay:1.65s}.d8{animation-delay:1.9s}
+  @media (prefers-reduced-motion:reduce){
+    .rise{animation:none;opacity:1;transform:none}
+    .spark{animation:none;display:none}
+    .names .shine{animation:none}
+  }
+  /* ---------- typography ---------- */
+  .bismillah{
+    font-family:'Amiri',serif;font-size:30px;color:#f0d391;text-shadow:0 0 18px rgba(240,211,145,.35);
+    margin-bottom:20px;line-height:1.9;
+  }
+  .ayah{
+    font-family:'Amiri',serif;font-size:21px;line-height:2.15;
+    color:#8a6a28;direction:rtl;margin:0 4px 10px;
+  }
+  .meaning{
+    font-style:italic;font-size:17.5px;line-height:1.6;color:var(--ink);
+    max-width:40ch;margin:0 auto 12px;
+  }
+  .urdu{
+    font-family:'Noto Nastaliq Urdu',serif;font-size:14.5px;line-height:2.5;
+    color:var(--ink-soft);direction:rtl;margin-bottom:8px;
+  }
+  .ref{
+    font-family:'Marcellus',serif;font-size:11px;letter-spacing:.22em;
+    color:var(--gold);text-transform:uppercase;
+  }
+  .divider{display:flex;align-items:center;justify-content:center;gap:10px;margin:26px 0}
+  .divider .line{height:1px;width:84px;background:linear-gradient(90deg,transparent,var(--gold-soft));}
+  .divider .line:last-child{background:linear-gradient(90deg,var(--gold-soft),transparent)}
+  .divider .gem{width:9px;height:9px;background:var(--gold);transform:rotate(45deg);
+    box-shadow:0 0 0 3px #1b1015,0 0 0 4px var(--gold-soft)}
+  .invite-title{
+    font-family:'Cinzel',serif;font-weight:600;font-size:21px;
+    letter-spacing:.34em;text-indent:.34em;color:var(--gold);
+    margin-bottom:20px;
+  }
+  .host{font-size:19px;color:var(--crimson);font-weight:500;margin-bottom:4px}
+  .host-line{font-size:16.5px;line-height:1.5;color:var(--ink-soft);max-width:30ch;margin:0 auto}
+  .names{margin:26px 0 6px}
+  .name{
+    font-family:'Great Vibes',cursive;font-size:44px;line-height:1.25;
+    background:linear-gradient(105deg,#e0bd77 0%,#a3782e 30%,#f5e0a6 50%,#a3782e 70%,#e0bd77 100%);
+    background-size:220% 100%;
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+    animation:shine 6s linear infinite;
+  }
+  @keyframes shine{to{background-position:220% 0}}
+  .parent{
+    font-family:'Marcellus',serif;font-size:11.5px;letter-spacing:.18em;
+    color:var(--ink-soft);margin:4px 0 12px;text-transform:uppercase;
+  }
+  .amp{
+    font-family:'Great Vibes',cursive;font-size:34px;color:var(--crimson);
+    display:block;margin:2px 0 10px;
+  }
+  .date{font-size:21px;font-weight:500;margin-bottom:12px}
+  .program{list-style:none;margin-bottom:6px}
+  .program li{font-family:'Marcellus',serif;font-size:15px;letter-spacing:.06em;margin:5px 0;color:var(--ink)}
+  .program .nikah{color:var(--crimson);font-size:17px}
+  .program b{font-weight:400}
+  .venue-label{font-family:'Marcellus',serif;font-size:11px;letter-spacing:.3em;color:var(--ink-soft);text-transform:uppercase;margin-bottom:6px}
+  .venue{
+    font-family:'Cinzel',serif;font-weight:600;font-size:24px;color:var(--gold);
+    letter-spacing:.08em;margin-bottom:4px;
+  }
+  .venue-sub{font-size:17.5px;color:var(--ink);line-height:1.4}
+  .closing{margin-top:24px}
+  .closing .urdu{font-size:13.5px;margin-bottom:2px}
+  .closing .await{font-style:italic;font-size:15.5px;color:var(--ink-soft)}
+  .mono{
+    font-family:'Great Vibes',cursive;font-size:30px;color:var(--gold);
+    margin-top:6px;
+  }
+  @media print{
+    body{background:#fff;padding:0}
+    .card{box-shadow:none;max-width:100%}
+    .spark{display:none}
+  }
+</style>
+</head>
+<body>
+<div class="card">
+
+  <!-- corner flourishes: gold line botanicals with blush blossoms -->
+  <svg class="corner tl" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <defs>
+      <radialGradient id="wash" cx="50%" cy="50%" r="50%">
+        <stop offset="0%" stop-color="#8f2438" stop-opacity=".55"/>
+        <stop offset="100%" stop-color="#8f2438" stop-opacity="0"/>
+      </radialGradient>
+    </defs>
+    <circle cx="34" cy="34" r="30" fill="url(#wash)"/>
+    <path d="M8 8 C 40 14, 62 30, 78 62" stroke="#c9a25a" stroke-width="1.6"/>
+    <path d="M8 8 C 16 38, 30 60, 60 78" stroke="#a8833f" stroke-width="1.2"/>
+    <path d="M30 15 q 8 -7 16 -3 q -8 8 -16 3z" fill="#5d8763"/>
+    <path d="M52 27 q 9 -5 16 1 q -9 7 -16 -1z" fill="#74a077"/>
+    <path d="M16 32 q -6 9 -1 17 q 8 -8 1 -17z" fill="#5d8763"/>
+    <path d="M28 55 q -4 10 2 17 q 7 -9 -2 -17z" fill="#74a077"/>
+    <g transform="translate(78,62)">
+      <circle r="8.5" fill="#c8324a"/><circle r="8.5" fill="none" stroke="#701426" stroke-width=".8"/>
+      <circle r="4.6" fill="#e56d7e"/><circle r="1.9" fill="#701426"/>
+    </g>
+    <g transform="translate(60,80)">
+      <circle r="6" fill="#e58a97"/><circle r="6" fill="none" stroke="#c8324a" stroke-width=".8"/>
+      <circle r="2.6" fill="#c8324a"/>
+    </g>
+    <g transform="translate(93,44)"><circle r="3.6" fill="#e4485c"/></g>
+    <circle cx="70" cy="20" r="1.7" fill="#d9b46a"/>
+    <circle cx="20" cy="70" r="1.7" fill="#d9b46a"/>
+    <circle cx="86" cy="30" r="1.3" fill="#b8934c"/>
+    <circle cx="34" cy="88" r="1.3" fill="#b8934c"/>
+  </svg>
+  <svg class="corner tr" viewBox="0 0 120 120" aria-hidden="true"><use href="#dup"/></svg>
+  <svg class="corner bl" viewBox="0 0 120 120" aria-hidden="true"><use href="#dup"/></svg>
+  <svg class="corner br" viewBox="0 0 120 120" aria-hidden="true"><use href="#dup"/></svg>
+
+  <!-- floating sparkles -->
+  <span class="spark" style="left:12%;top:30%;animation-delay:0s">✦</span>
+  <span class="spark" style="left:86%;top:24%;animation-delay:1.6s">✦</span>
+  <span class="spark" style="left:20%;top:64%;animation-delay:3.1s">✧</span>
+  <span class="spark" style="left:80%;top:58%;animation-delay:4.4s">✦</span>
+  <span class="spark" style="left:50%;top:80%;animation-delay:2.2s">✧</span>
+  <span class="spark" style="left:64%;top:38%;animation-delay:5.3s">✦</span>
+
+  <!-- ======== content ======== -->
+  <div class="rise d1">
+    <div class="bismillah">بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْمِ</div>
+  </div>
+
+  <div class="rise d2">
+    <p class="meaning">And of His signs is that He created for you spouses from among
+      yourselves, so that you may find tranquility with them; and He placed
+      between you love and mercy. Indeed, in that are signs for people
+      who reflect.</p>
+    <div class="ref">Surah Ar-Rum · 30:21</div>
+  </div>
+
+  <div class="divider rise d3"><span class="line"></span><span class="gem"></span><span class="line"></span></div>
+
+  <div class="rise d3">
+    <div class="invite-title">Wedding Invitation</div>
+    <div class="host">Mrs. Ghulam Baqar Khokhar</div>
+    <p class="host-line">requests the pleasure of your company at the wedding ceremony of her beloved son</p>
+  </div>
+
+  <div class="names rise d4">
+    <div class="name">Noor Ali Shahbaz</div>
+    <div class="parent">S/O Ghulam Baqar Khokhar (Late)</div>
+    <span class="amp">with</span>
+    <div class="name">Dr. Misbah Khan</div>
+    <div class="parent">D/O Ashfaque Ahmed</div>
+  </div>
+
+  <div class="divider rise d5"><span class="line"></span><span class="gem"></span><span class="line"></span></div>
+
+  <div class="rise d5">
+    <div class="date">Sunday, October 18, 2026</div>
+    <ul class="program">
+      <li class="nikah">Nikah — <b>8:00 PM Sharp</b></li>
+      <li>Dinner — <b>9:00 PM</b></li>
+    </ul>
+  </div>
+
+  <div class="divider rise d6"><span class="line"></span><span class="gem"></span><span class="line"></span></div>
+
+  <div class="rise d6">
+    <div class="venue-label">Venue</div>
+    <div class="venue">Dream Palace</div>
+    <div class="venue-sub">Near New Sabzi Mandi, Hyderabad</div>
+  </div>
+
+  <div class="closing rise d7">
+    <div class="await">Baraye meharbani, waqt ki pabandi farmayen</div>
+    <div class="await">We await your gracious presence</div>
+    <div class="mono">Noor weds Misbah</div>
+  </div>
+
+</div>
+
+<script>
+/* Duplicate the drawn top-left flourish into the other three corners
+   (SVG <use> across separate roots doesn't clone reliably, so we copy nodes). */
+document.addEventListener('DOMContentLoaded', function () {
+  var src = document.querySelector('.corner.tl');
+  ['tr', 'bl', 'br'].forEach(function (pos) {
+    var dst = document.querySelector('.corner.' + pos);
+    dst.innerHTML = src.innerHTML;
+    /* unique gradient ids per copy so fills resolve */
+    dst.innerHTML = dst.innerHTML.replaceAll('id="wash"', 'id="wash-' + pos + '"')
+                                 .replaceAll('url(#wash)', 'url(#wash-' + pos + ')');
+  });
+});
+</script>
+</body>
+</html>
